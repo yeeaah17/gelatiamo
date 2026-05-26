@@ -355,20 +355,69 @@
 
     <!-- NAV TABS -->
     <div class="nav">
-      <div class="nav-item active" data-section="caffe">Caffè</div>
-      <div class="nav-item" data-section="cioccolata">Cioccolata</div>
+      <div class="nav-item active" data-section="gelato">Gelato</div>
+      <div class="nav-item" data-section="caffe">Caffetteria</div>
       <div class="nav-item" data-section="bevande">Bevande</div>
-      <div class="nav-item" data-section="mangiare">Da mangiare</div>
       <div class="nav-item" data-section="delizie">Delizie</div>
-      <div class="nav-item" data-section="gelato">Gelato</div>
     </div>
 
     <!-- MENU BODY -->
     <div class="menu-body">
 
-      <!-- SEZIONE CAFFÈ -->
-      <div class="section active" id="caffe">
-        <div class="category-badge"><span class="badge-icon">☕</span> Caffè</div>
+      <!-- SEZIONE GELATO -->
+      <div class="section active" id="gelato">
+        <div class="category-badge"><span class="badge-icon">🍦</span> Dalla nostra Gelateria</div>
+
+        <div class="delizie-card">
+          <div class="delizie-title">Gusti del giorno</div>
+          <div class="delizie-text">
+            I nostri gusti cambiano ogni giorno, preparati freschi ogni mattina.<br><br>
+            Chiedi al bancone o dai un'occhiata alla vetrina!
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-left">
+            <div class="card-name">Coppa Gelato</div>
+            <div class="card-desc">2 gusti</div>
+          </div>
+          <div class="card-price">€ 3,50</div>
+        </div>
+        <div class="card">
+          <div class="card-left">
+            <div class="card-name">Coppa Gelato</div>
+            <div class="card-desc">3 gusti</div>
+          </div>
+          <div class="card-price">€ 5,00</div>
+        </div>
+        <div class="card">
+          <div class="card-left">
+            <div class="card-name">Coppa Maxi Guarnita</div>
+            <div class="card-desc">frutta fresca, creme</div>
+          </div>
+          <div class="card-price">€ 8,50</div>
+        </div>
+        <div class="card">
+          <div class="card-left"><div class="card-name">Banana Split</div></div>
+          <div class="card-price">€ 4,00</div>
+        </div>
+        <div class="card">
+          <div class="card-left"><div class="card-name">Spaghetti Ice</div></div>
+          <div class="card-price">€ 4,00</div>
+        </div>
+        <div class="card">
+          <div class="card-left"><div class="card-name">Frappè Piccolo</div></div>
+          <div class="card-price">€ 4,00</div>
+        </div>
+        <div class="card">
+          <div class="card-left"><div class="card-name">Frappè Grande</div></div>
+          <div class="card-price">€ 4,50</div>
+        </div>
+      </div>
+
+      <!-- SEZIONE CAFFETTERIA -->
+      <div class="section" id="caffe">
+        <div class="category-badge"><span class="badge-icon">☕</span> Caffetteria</div>
         <div class="card">
           <div class="card-left"><div class="card-name">Espresso</div></div>
           <div class="card-price">€ 1,10</div>
@@ -422,34 +471,6 @@
         </div>
       </div>
 
-      <!-- SEZIONE CIOCCOLATA -->
-      <div class="section" id="cioccolata">
-        <div class="category-badge"><span class="badge-icon">🍫</span> Cioccolata</div>
-        <div class="choco-card">
-          <div class="choco-header">
-            <div class="choco-title">Cioccolata Calda</div>
-            <div class="choco-price">€ 4,00</div>
-          </div>
-          <div class="choco-label">Scegli la base</div>
-          <div class="choco-tags">
-            <span class="choco-tag">al latte</span>
-            <span class="choco-tag">fondente</span>
-            <span class="choco-tag">bianca</span>
-            <span class="choco-tag">nocciola</span>
-            <span class="choco-tag">pistacchio</span>
-          </div>
-          <div class="choco-divider"></div>
-          <div class="choco-extra-label">Aggiunte +€ 0,50 cad.</div>
-          <div class="choco-tags">
-            <span class="choco-tag">panna</span>
-            <span class="choco-tag">meringa</span>
-            <span class="choco-tag">frutta di stagione</span>
-            <span class="choco-tag">pistacchi</span>
-            <span class="choco-tag">nocciole</span>
-          </div>
-        </div>
-      </div>
-
       <!-- SEZIONE BEVANDE -->
       <div class="section" id="bevande">
         <div class="category-badge"><span class="badge-icon">🥤</span> Bevande</div>
@@ -480,8 +501,34 @@
         </div>
       </div>
 
-      <!-- SEZIONE DA MANGIARE -->
-      <div class="section" id="mangiare">
+      <!-- SEZIONE DELIZIE (Cioccolata + Da accompagnare + Delizie del giorno) -->
+      <div class="section" id="delizie">
+
+        <div class="category-badge"><span class="badge-icon">🍫</span> Cioccolata</div>
+        <div class="choco-card">
+          <div class="choco-header">
+            <div class="choco-title">Cioccolata Calda</div>
+            <div class="choco-price">€ 4,00</div>
+          </div>
+          <div class="choco-label">Scegli la base</div>
+          <div class="choco-tags">
+            <span class="choco-tag">al latte</span>
+            <span class="choco-tag">fondente</span>
+            <span class="choco-tag">bianca</span>
+            <span class="choco-tag">nocciola</span>
+            <span class="choco-tag">pistacchio</span>
+          </div>
+          <div class="choco-divider"></div>
+          <div class="choco-extra-label">Aggiunte +€ 0,50 cad.</div>
+          <div class="choco-tags">
+            <span class="choco-tag">panna</span>
+            <span class="choco-tag">meringa</span>
+            <span class="choco-tag">frutta di stagione</span>
+            <span class="choco-tag">pistacchi</span>
+            <span class="choco-tag">nocciole</span>
+          </div>
+        </div>
+
         <div class="category-badge"><span class="badge-icon">🥐</span> Da accompagnare</div>
         <div class="card">
           <div class="card-left"><div class="card-name">Croissant</div></div>
@@ -513,60 +560,16 @@
           </div>
           <div class="card-price">€ 5,00</div>
         </div>
-      </div>
 
-      <!-- SEZIONE DELIZIE -->
-      <div class="section" id="delizie">
         <div class="category-badge"><span class="badge-icon">✨</span> Delizie del Giorno</div>
         <div class="delizie-card">
-          <div class="delizie-title">Delizie del Giorno</div>
+          <div class="delizie-title">Fatto in casa, ogni giorno</div>
           <div class="delizie-text">
             Prepariamo tutti i giorni i nostri dolci con ingredienti genuini e quel sapore di "fatto in casa".<br><br>
             La proposta varia ogni giorno — scopri la selezione di oggi!
           </div>
         </div>
-      </div>
 
-      <!-- SEZIONE GELATO -->
-      <div class="section" id="gelato">
-        <div class="category-badge"><span class="badge-icon">🍦</span> Dalla nostra Gelateria</div>
-        <div class="card">
-          <div class="card-left">
-            <div class="card-name">Coppa Gelato</div>
-            <div class="card-desc">2 gusti</div>
-          </div>
-          <div class="card-price">€ 3,50</div>
-        </div>
-        <div class="card">
-          <div class="card-left">
-            <div class="card-name">Coppa Gelato</div>
-            <div class="card-desc">3 gusti</div>
-          </div>
-          <div class="card-price">€ 5,00</div>
-        </div>
-        <div class="card">
-          <div class="card-left">
-            <div class="card-name">Coppa Maxi Guarnita</div>
-            <div class="card-desc">frutta fresca, creme</div>
-          </div>
-          <div class="card-price">€ 8,50</div>
-        </div>
-        <div class="card">
-          <div class="card-left"><div class="card-name">Banana Split</div></div>
-          <div class="card-price">€ 4,00</div>
-        </div>
-        <div class="card">
-          <div class="card-left"><div class="card-name">Spaghetti Ice</div></div>
-          <div class="card-price">€ 4,00</div>
-        </div>
-        <div class="card">
-          <div class="card-left"><div class="card-name">Frappè Piccolo</div></div>
-          <div class="card-price">€ 4,00</div>
-        </div>
-        <div class="card">
-          <div class="card-left"><div class="card-name">Frappè Grande</div></div>
-          <div class="card-price">€ 4,50</div>
-        </div>
       </div>
 
     </div>
@@ -586,18 +589,12 @@
 
     navItems.forEach(item => {
       item.addEventListener('click', () => {
-        // Rimuovi active da tutti i tab
         navItems.forEach(i => i.classList.remove('active'));
-        // Aggiungi active al tab cliccato
         item.classList.add('active');
-
-        // Nascondi tutte le sezioni
         sections.forEach(s => s.classList.remove('active'));
-        // Mostra la sezione corrispondente
         document.getElementById(item.dataset.section).classList.add('active');
-
-        // Scrolla in cima al menu
-        document.querySelector('.menu-body').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        // Riporta in cima senza animazione per evitare scroll indesiderato
+        window.scrollTo({ top: 0 });
       });
     });
   </script>
