@@ -117,25 +117,22 @@
     .nav {
       background: #ffffff;
       display: flex;
-      overflow-x: auto;
-      padding: 0 16px;
       border-bottom: 2px solid #f0ebe3;
-      scrollbar-width: none;
       position: sticky;
       top: 0;
       z-index: 10;
     }
 
-    .nav::-webkit-scrollbar { display: none; }
-
     .nav-item {
+      flex: 1;
+      text-align: center;
       font-family: 'Josefin Sans', sans-serif;
       font-size: 11px;
       font-weight: 600;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: #a09080;
-      padding: 14px 14px;
+      padding: 14px 8px;
       white-space: nowrap;
       cursor: pointer;
       border-bottom: 2px solid transparent;
