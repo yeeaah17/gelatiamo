@@ -217,25 +217,74 @@
     .card.highlight .card-desc { color: rgba(255,255,255,0.75); }
     .card.highlight .card-price { color: #ffffff; }
 
-    /* Card Cioccolata — versione semplificata */
-    .card-variants {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 15px;
-      font-weight: 400;
-      color: #3D2B1F;
-      margin-bottom: 8px;
-      line-height: 1.5;
+    /* Card Cioccolata — Opzione 2: Sezioni con respiro */
+    .choco-sezioni {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 20px 18px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 12px rgba(61,43,31,0.07);
     }
 
-    .card-extras {
+    .choco-sezioni-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding-bottom: 14px;
+      border-bottom: 1px solid #f0ebe3;
+      margin-bottom: 16px;
+    }
+
+    .choco-sezioni-name {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 16px;
+      font-weight: 600;
+      color: #3D2B1F;
+    }
+
+    .choco-sezioni-price {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #C4A882;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .choco-sezioni-row {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      margin-bottom: 14px;
+    }
+
+    .choco-sezioni-row:last-child { margin-bottom: 0; }
+
+    .choco-sezioni-key {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #E8614B;
+      white-space: nowrap;
+      min-width: 62px;
+      padding-top: 3px;
+    }
+
+    .choco-sezioni-value {
       font-family: 'Josefin Sans', sans-serif;
       font-size: 14px;
       font-weight: 400;
-      color: #a09080;
-      line-height: 1.5;
+      color: #3D2B1F;
+      line-height: 1.65;
     }
 
-    .card-extras strong {
+    .choco-sezioni-value .muted {
+      color: #a09080;
+    }
+
+    .choco-sezioni-value .accent {
       color: #E8614B;
       font-weight: 600;
     }
@@ -450,18 +499,8 @@
         </div>
       </div>
 
-      <!-- SEZIONE DELIZIE (Cioccolata + Da accompagnare + Delizie del giorno) -->
+      <!-- SEZIONE DELIZIE: Da accompagnare → Delizie del giorno → Cioccolata -->
       <div class="section" id="delizie">
-
-        <div class="category-badge"><span class="badge-icon">🍫</span> Cioccolata</div>
-        <div class="card">
-          <div class="card-left">
-            <div class="card-name">Cioccolata Calda</div>
-            <div class="card-variants">Al latte · fondente · bianca · nocciola · pistacchio</div>
-            <div class="card-extras">Aggiunte <strong>+€ 0,50</strong>: panna, meringa, frutta di stagione, pistacchi, nocciole</div>
-          </div>
-          <div class="card-price">€ 4,00</div>
-        </div>
 
         <div class="category-badge"><span class="badge-icon">🥐</span> Da accompagnare</div>
         <div class="card">
@@ -501,6 +540,22 @@
           <div class="delizie-text">
             Prepariamo tutti i giorni i nostri dolci con ingredienti genuini e quel sapore di "fatto in casa".<br><br>
             La proposta varia ogni giorno — scopri la selezione di oggi!
+          </div>
+        </div>
+
+        <div class="category-badge"><span class="badge-icon">🍫</span> Cioccolata</div>
+        <div class="choco-sezioni">
+          <div class="choco-sezioni-top">
+            <div class="choco-sezioni-name">Cioccolata Calda</div>
+            <div class="choco-sezioni-price">€ 4,00</div>
+          </div>
+          <div class="choco-sezioni-row">
+            <div class="choco-sezioni-key">Basi</div>
+            <div class="choco-sezioni-value">Al latte · fondente · bianca · nocciola · pistacchio</div>
+          </div>
+          <div class="choco-sezioni-row">
+            <div class="choco-sezioni-key">Aggiunte</div>
+            <div class="choco-sezioni-value">Panna, meringa, frutta di stagione, pistacchi, nocciole <span class="muted">(</span><span class="accent">+€ 0,50</span> <span class="muted">cad.)</span></div>
           </div>
         </div>
 
