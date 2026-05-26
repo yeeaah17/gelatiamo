@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gelatiamo — Menu</title>
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&family=Inspiration&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      background: #f0ede8;
+      display: flex;
+      justify-content: center;
+      padding: 30px 16px;
+      min-height: 100vh;
+    }
+
+    .phone {
+      width: 100%;
+      max-width: 390px;
+      background: #faf7f4;
+      border-radius: 40px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    }
+
+    /* HEADER — stile Minimal (Preview 1) */
+    .header {
+      background: #ffffff;
+      padding: 48px 24px 32px;
+      text-align: center;
+      border-bottom: 1px solid #ede8e0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Blob corallo — angolo in alto a destra */
+    .blob-coral {
+      position: absolute;
+      top: -45px;
+      right: -45px;
+      width: 140px;
+      height: 140px;
+      background: #E8614B;
+      border-radius: 60% 40% 70% 30% / 50% 60% 40% 50%;
+      opacity: 0.75;
+    }
+
+    /* Blob marrone — angolo in basso a sinistra */
+    .blob-brown {
+      position: absolute;
+      bottom: -35px;
+      left: -35px;
+      width: 115px;
+      height: 115px;
+      background: #3D2B1F;
+      border-radius: 40% 60% 30% 70% / 60% 40% 60% 40%;
+      opacity: 0.65;
+    }
+
+    .logo-text {
+      font-family: 'Inspiration', cursive;
+      font-size: 56px;
+      color: #C4A882;
+      display: block;
+      line-height: 1;
+      position: relative;
+      z-index: 1;
+    }
+
+    .divider-line {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin: 10px 0 8px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .divider-line::before,
+    .divider-line::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #3D2B1F;
+      max-width: 80px;
+    }
+
+    .heart { color: #E8614B; font-size: 12px; }
+
+    .logo-sub {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      letter-spacing: 3px;
+      color: #3D2B1F;
+      text-transform: lowercase;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* NAV TAB categorie */
+    .nav {
+      background: #ffffff;
+      display: flex;
+      overflow-x: auto;
+      padding: 0 16px;
+      border-bottom: 2px solid #f0ebe3;
+      scrollbar-width: none;
+    }
+
+    .nav::-webkit-scrollbar { display: none; }
+
+    .nav-item {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #a09080;
+      padding: 14px 14px;
+      white-space: nowrap;
+      cursor: pointer;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -2px;
+    }
+
+    .nav-item.active {
+      color: #E8614B;
+      border-bottom-color: #E8614B;
+    }
+
+    /* CORPO MENU */
+    .menu-body { padding: 20px 16px 48px; }
+
+    /* Badge categoria */
+    .category-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #3D2B1F;
+      color: #ffffff;
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 30px;
+      margin: 24px 0 14px;
+    }
+
+    .category-badge:first-child { margin-top: 8px; }
+
+    .badge-icon { font-size: 14px; }
+
+    /* CARD singola voce */
+    .card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 12px rgba(61,43,31,0.07);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card-left { flex: 1; }
+
+    .card-name {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #3D2B1F;
+    }
+
+    .card-desc {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      color: #a09080;
+      margin-top: 3px;
+    }
+
+    .card-price {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #C4A882;
+      margin-left: 12px;
+      white-space: nowrap;
+    }
+
+    /* Card highlight */
+    .card.highlight {
+      background: linear-gradient(135deg, #E8614B, #c94d39);
+    }
+
+    .card.highlight .card-name { color: #ffffff; }
+    .card.highlight .card-desc { color: rgba(255,255,255,0.75); }
+    .card.highlight .card-price { color: #ffffff; }
+
+    /* Gusti gelato */
+    .flavors-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 16px 18px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 12px rgba(61,43,31,0.07);
+    }
+
+    .flavors-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #C4A882;
+      margin-bottom: 10px;
+    }
+
+    .flavors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .flavor-tag {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 400;
+      color: #3D2B1F;
+      background: #faf6f0;
+      border: 1px solid #e8dfd0;
+      border-radius: 20px;
+      padding: 5px 12px;
+    }
+
+    /* Card Cioccolata — layout speciale */
+    .choco-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 18px 18px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 12px rgba(61,43,31,0.07);
+    }
+
+    .choco-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+    }
+
+    .choco-title {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #3D2B1F;
+    }
+
+    .choco-price {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      color: #C4A882;
+    }
+
+    .choco-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #E8614B;
+      margin-bottom: 8px;
+    }
+
+    .choco-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 14px;
+    }
+
+    .choco-tag {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      color: #3D2B1F;
+      background: #faf6f0;
+      border: 1px solid #e8dfd0;
+      border-radius: 20px;
+      padding: 4px 11px;
+    }
+
+    .choco-divider {
+      height: 1px;
+      background: #f0ebe3;
+      margin-bottom: 12px;
+    }
+
+    .choco-extra-label {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #a09080;
+      margin-bottom: 8px;
+    }
+
+    /* Card Delizie del giorno */
+    .delizie-card {
+      background: linear-gradient(135deg, #C4A882, #b09270);
+      border-radius: 16px;
+      padding: 20px 18px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 12px rgba(61,43,31,0.12);
+      text-align: center;
+    }
+
+    .delizie-title {
+      font-family: 'Inspiration', cursive;
+      font-size: 28px;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .delizie-text {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.9);
+      line-height: 1.6;
+    }
+
+    /* FOOTER */
+    .footer {
+      background: #3D2B1F;
+      padding: 28px 24px;
+      text-align: center;
+    }
+
+    .footer-logo {
+      font-family: 'Inspiration', cursive;
+      font-size: 32px;
+      color: #C4A882;
+    }
+
+    .footer-info {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 11px;
+      font-weight: 300;
+      color: rgba(255,255,255,0.5);
+      letter-spacing: 1px;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+  <div class="phone">
+
+    <!-- HEADER MINIMAL (stile Preview 1) -->
+    <div class="header">
+      <div class="blob-coral"></div>
+      <div class="blob-brown"></div>
+      <span class="logo-text">Gelatiamo</span>
+      <div class="divider-line"><span class="heart">♥</span></div>
+      <span class="logo-sub">gelateria &nbsp; caffetteria</span>
+    </div>
+
+    <!-- NAV TABS -->
+    <div class="nav">
+      <div class="nav-item active">Caffè</div>
+      <div class="nav-item">Cioccolata</div>
+      <div class="nav-item">Bevande</div>
+      <div class="nav-item">Da mangiare</div>
+      <div class="nav-item">Delizie</div>
+      <div class="nav-item">Gelato</div>
+    </div>
+
+    <!-- MENU BODY -->
+    <div class="menu-body">
+
+      <!-- CAFFÈ -->
+      <div class="category-badge"><span class="badge-icon">☕</span> Caffè</div>
+
+      <div class="card">
+        <div class="card-left"><div class="card-name">Espresso</div></div>
+        <div class="card-price">€ 1,10</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Macchiato</div></div>
+        <div class="card-price">€ 1,10</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Cappuccino</div></div>
+        <div class="card-price">€ 1,60</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Marocchino</div></div>
+        <div class="card-price">€ 1,50</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Orzo / Ginseng</div></div>
+        <div class="card-price">€ 2,00</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Latte Macchiato</div></div>
+        <div class="card-price">€ 2,00</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Americano</div></div>
+        <div class="card-price">€ 1,50</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Decaffeinato</div></div>
+        <div class="card-price">€ 1,50</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Cappuccino di Soia</div></div>
+        <div class="card-price">€ 1,80</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Caffè Shakerato</div>
+        </div>
+        <div class="card-price">€ 3,00</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Crema di Caffè</div>
+        </div>
+        <div class="card-price">€ 3,00</div>
+      </div>
+      <div class="card highlight">
+        <div class="card-left">
+          <div class="card-name">Specials</div>
+          <div class="card-desc">scopri la nostra proposta</div>
+        </div>
+        <div class="card-price">€ 2,50</div>
+      </div>
+
+      <!-- CIOCCOLATA -->
+      <div class="category-badge"><span class="badge-icon">🍫</span> Cioccolata</div>
+
+      <div class="choco-card">
+        <div class="choco-header">
+          <div class="choco-title">Cioccolata Calda</div>
+          <div class="choco-price">€ 4,00</div>
+        </div>
+        <div class="choco-label">Scegli la base</div>
+        <div class="choco-tags">
+          <span class="choco-tag">al latte</span>
+          <span class="choco-tag">fondente</span>
+          <span class="choco-tag">bianca</span>
+          <span class="choco-tag">nocciola</span>
+          <span class="choco-tag">pistacchio</span>
+        </div>
+        <div class="choco-divider"></div>
+        <div class="choco-extra-label">Aggiunte +€ 0,50 cad.</div>
+        <div class="choco-tags">
+          <span class="choco-tag">panna</span>
+          <span class="choco-tag">meringa</span>
+          <span class="choco-tag">frutta di stagione</span>
+          <span class="choco-tag">pistacchi</span>
+          <span class="choco-tag">nocciole</span>
+        </div>
+      </div>
+
+      <!-- BEVANDE -->
+      <div class="category-badge"><span class="badge-icon">🥤</span> Bevande</div>
+
+      <div class="card">
+        <div class="card-left"><div class="card-name">Spremuta</div></div>
+        <div class="card-price">€ 4,00</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Succhi di Frutta</div>
+          <div class="card-desc">bio e prodotti in Italia</div>
+        </div>
+        <div class="card-price">€ 4,50</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Bibite</div>
+          <div class="card-desc">bio e prodotte in Italia</div>
+        </div>
+        <div class="card-price">€ 4,00</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Tè e Infusi</div>
+          <div class="card-desc">scopri la nostra selezione</div>
+        </div>
+        <div class="card-price">€ 3,00</div>
+      </div>
+
+      <!-- DA ACCOMPAGNARE -->
+      <div class="category-badge"><span class="badge-icon">🥐</span> Da accompagnare</div>
+
+      <div class="card">
+        <div class="card-left"><div class="card-name">Croissant</div></div>
+        <div class="card-price">€ 1,40</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Krapfen</div>
+          <div class="card-desc">crema o marmellata</div>
+        </div>
+        <div class="card-price">€ 1,80</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Fetta di Torta</div></div>
+        <div class="card-price">€ 3,50</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Yogurt Guarnito</div></div>
+        <div class="card-price">€ 4,00</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Waffles</div></div>
+        <div class="card-price">€ 3,50</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Waffles Guarniti</div>
+          <div class="card-desc">frutta fresca, gelato, creme</div>
+        </div>
+        <div class="card-price">€ 5,00</div>
+      </div>
+
+      <!-- DELIZIE DEL GIORNO -->
+      <div class="category-badge"><span class="badge-icon">✨</span> Delizie del Giorno</div>
+
+      <div class="delizie-card">
+        <div class="delizie-title">Delizie del Giorno</div>
+        <div class="delizie-text">
+          Prepariamo tutti i giorni i nostri dolci con ingredienti genuini e quel sapore di "fatto in casa".<br><br>
+          La proposta varia ogni giorno — scopri la selezione di oggi!
+        </div>
+      </div>
+
+      <!-- GELATO -->
+      <div class="category-badge"><span class="badge-icon">🍦</span> Dalla nostra Gelateria</div>
+
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Coppa Gelato</div>
+          <div class="card-desc">2 gusti</div>
+        </div>
+        <div class="card-price">€ 3,50</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Coppa Gelato</div>
+          <div class="card-desc">3 gusti</div>
+        </div>
+        <div class="card-price">€ 5,00</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Coppa Maxi Guarnita</div>
+          <div class="card-desc">frutta fresca, creme</div>
+        </div>
+        <div class="card-price">€ 8,50</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Banana Split</div></div>
+        <div class="card-price">€ 4,00</div>
+      </div>
+      <div class="card">
+        <div class="card-left"><div class="card-name">Spaghetti Ice</div></div>
+        <div class="card-price">€ 4,00</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Frappè Piccolo</div>
+        </div>
+        <div class="card-price">€ 4,00</div>
+      </div>
+      <div class="card">
+        <div class="card-left">
+          <div class="card-name">Frappè Grande</div>
+        </div>
+        <div class="card-price">€ 4,50</div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      <div class="footer-logo">Gelatiamo</div>
+      <div class="footer-info">gelatiamo.it &nbsp;·&nbsp; ♥ fatto con amore</div>
+    </div>
+
+  </div>
+</body>
+</html>
