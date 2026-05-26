@@ -217,77 +217,27 @@
     .card.highlight .card-desc { color: rgba(255,255,255,0.75); }
     .card.highlight .card-price { color: #ffffff; }
 
-    /* Card Cioccolata */
-    .choco-card {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 18px 18px;
-      margin-bottom: 10px;
-      box-shadow: 0 2px 12px rgba(61,43,31,0.07);
-    }
-
-    .choco-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-
-    .choco-title {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 14px;
-      font-weight: 600;
-      color: #3D2B1F;
-    }
-
-    .choco-price {
+    /* Card Cioccolata — versione semplificata */
+    .card-variants {
       font-family: 'Josefin Sans', sans-serif;
       font-size: 15px;
-      font-weight: 600;
-      color: #C4A882;
-    }
-
-    .choco-label {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #E8614B;
-      margin-bottom: 8px;
-    }
-
-    .choco-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-bottom: 14px;
-    }
-
-    .choco-tag {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 11px;
+      font-weight: 400;
       color: #3D2B1F;
-      background: #faf6f0;
-      border: 1px solid #e8dfd0;
-      border-radius: 20px;
-      padding: 4px 11px;
-    }
-
-    .choco-divider {
-      height: 1px;
-      background: #f0ebe3;
-      margin-bottom: 12px;
-    }
-
-    .choco-extra-label {
-      font-family: 'Josefin Sans', sans-serif;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #a09080;
       margin-bottom: 8px;
+      line-height: 1.5;
+    }
+
+    .card-extras {
+      font-family: 'Josefin Sans', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      color: #a09080;
+      line-height: 1.5;
+    }
+
+    .card-extras strong {
+      color: #E8614B;
+      font-weight: 600;
     }
 
     /* Card Delizie */
@@ -504,28 +454,13 @@
       <div class="section" id="delizie">
 
         <div class="category-badge"><span class="badge-icon">🍫</span> Cioccolata</div>
-        <div class="choco-card">
-          <div class="choco-header">
-            <div class="choco-title">Cioccolata Calda</div>
-            <div class="choco-price">€ 4,00</div>
+        <div class="card">
+          <div class="card-left">
+            <div class="card-name">Cioccolata Calda</div>
+            <div class="card-variants">Al latte · fondente · bianca · nocciola · pistacchio</div>
+            <div class="card-extras">Aggiunte <strong>+€ 0,50</strong>: panna, meringa, frutta di stagione, pistacchi, nocciole</div>
           </div>
-          <div class="choco-label">Scegli la base</div>
-          <div class="choco-tags">
-            <span class="choco-tag">al latte</span>
-            <span class="choco-tag">fondente</span>
-            <span class="choco-tag">bianca</span>
-            <span class="choco-tag">nocciola</span>
-            <span class="choco-tag">pistacchio</span>
-          </div>
-          <div class="choco-divider"></div>
-          <div class="choco-extra-label">Aggiunte +€ 0,50 cad.</div>
-          <div class="choco-tags">
-            <span class="choco-tag">panna</span>
-            <span class="choco-tag">meringa</span>
-            <span class="choco-tag">frutta di stagione</span>
-            <span class="choco-tag">pistacchi</span>
-            <span class="choco-tag">nocciole</span>
-          </div>
+          <div class="card-price">€ 4,00</div>
         </div>
 
         <div class="category-badge"><span class="badge-icon">🥐</span> Da accompagnare</div>
